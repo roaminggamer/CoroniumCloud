@@ -28,14 +28,17 @@ done
 #download cloud pack
 cd $TERRAFORM_SUPPORT
 
-wget https://s3.amazonaws.com/coronium-cloud/coronium-cloud.tar.gz
+#RG Use My Local Copy
+#wget https://s3.amazonaws.com/coronium-cloud/coronium-cloud.tar.gz
+wget https://github.com/roaminggamer/CoroniumCloud/raw/master/server/coronium-cloud.tar.gz
 tar xzf coronium-cloud.tar.gz
 
 tar xzf coronium-misc.tar.gz
 mv misc/* .
 
 rm -rf misc
-rm coronium-cloud.tar.gz
+#RG Keep DL 
+#rm coronium-cloud.tar.gz
 rm coronium-misc.tar.gz
 
 newusers $TERRAFORM_SUPPORT/coronium_user
@@ -126,4 +129,5 @@ service coronium start
 #Clean
 rm -rf $TERRAFORM_SUPPORT
 
-reboot
+#RG Skip Reboot
+#reboot
